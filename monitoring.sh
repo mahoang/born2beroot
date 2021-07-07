@@ -16,6 +16,8 @@ cpulo=$(top -bin1 | grep Cpu | awk {'print $2 + $4'}
 TCP=$(cat /proc/net/sockstqt | grep TCP | awk '{print $3}')
 ip=$(hostname -I)
 mac=$(ip link show | grep link/ether | awk '{print $3}')
+cmd=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
+
 echo "Monitoring Value :"
 echo "---"
 echo "#Architecture : $arch"
@@ -29,11 +31,11 @@ echo "LVM use: $lvmyn"
 echo "Connexions TCP:$TCP ESTABLISHED"
 echo "#User log :$userl"
 echo "Network :$ip ($mac)"
-echo "Sudo:"
+echo "Sudo:$cmd commandes"
 
 #echo "a = $a"
 #echo "b = $b"
-echo "c = $c%"
+#echo "c = $c%"
 #echo "du = $du"
 #echo "du2 = $du2"
 #echo "du3 = $du3"
