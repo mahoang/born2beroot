@@ -41,3 +41,6 @@ echo "Sudo:$cmd commandes"
 #echo "du3 = $du3"
 #echo "lvm $lvm"
 #echo "lvmyn $lvmyn"
+
+#change hostname - hostnamectl set-hostname 'changeit'
+#know which users are part of certain group - getent group grouptoknow
